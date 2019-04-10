@@ -1,12 +1,11 @@
-# proj2
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2019 at 03:46 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Apr 10, 2019 at 06:23 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -54,6 +53,14 @@ CREATE TABLE `nametable2` (
   `message` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `nametable2`
+--
+
+INSERT INTO `nametable2` (`id`, `name`, `email`, `cidate`, `codate`, `guest`, `children`, `bed`, `breakfast`, `message`) VALUES
+(1, '', '', '0000-00-00', '0000-00-00', 0, 0, 'Villa', 'Yes', 'adsf'),
+(3, 'asdf', 'asdf@example.com', '2019-03-20', '2019-04-17', 3, 1, 'Villa', 'Yes', '');
+
 -- --------------------------------------------------------
 
 --
@@ -72,7 +79,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
-(0, 'cstidham', '$2y$10$2kBBi.gdbs6J0D9QsL9tEOekU/5OWpsOVVX6Wy6dVUGw6qziGId4G', '2019-04-09 20:04:37');
+(0, 'cstidham', '$2y$10$2kBBi.gdbs6J0D9QsL9tEOekU/5OWpsOVVX6Wy6dVUGw6qziGId4G', '2019-04-09 20:04:37'),
+(0, 'mkkrajcev', '$2y$10$s7CuVrMICSxBjwtxOhPE8uFLdrSBDbbjnahB2PK7F49Ul/4XXn3gO', '2019-04-09 23:49:11');
 
 --
 -- Indexes for dumped tables
@@ -83,6 +91,16 @@ INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
 --
 ALTER TABLE `nametable2`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `nametable2`
+--
+ALTER TABLE `nametable2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
