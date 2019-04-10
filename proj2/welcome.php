@@ -197,18 +197,24 @@ if(isset($_POST['update']))
       <div class="container" align="center">
         <article id="main-col">
           <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
-          
+
 
 
             <form action="welcome.php" method="post" class="dark">
                         <h1 class="page-title" >Reservation</h1>
                          <input type="number" name="id" placeholder="Search ID" value="<?php echo $id;?>"><br><br>
+                         <label>Name</label><br>
                          <input type="text" name="name" placeholder="name" value="<?php echo $name;?>"><br><br>
-                         <input type="text" name="email" placeholder="Email" value="<?php echo $email;?>"><br><br>
+                         <label>Email</label><br>
+                         <input type="email" name="email" placeholder="Email" value="<?php echo $email;?>"><br><br>
+                         <label>Check IN Date</label><br>
                          <input type="date" name="cidate" placeholder="Check IN Date (EX: 2019-2-2)" value="<?php echo $cidate;?>"><br><br>
+                         <label>Check OUT Date</label><br>
                          <input type="date" name="codate" placeholder="Check OUT Date (EX: 2019-2-2)" value="<?php echo $codate;?>"><br><br>
-                         <input type="number" name="guest" placeholder="# of Adults" value="<?php echo $guest;?>"><br><br>
-                         <input type="number" name="children" placeholder="# of $children" value="<?php echo $children;?>"><br><br>
+                         <label>Number Of Adults</label><br>
+                         <input type="number" name="guest" min="0" max="6" placeholder="# of Adults" value="<?php echo $guest;?>"><br><br>
+                         <label>Number Of Children</label><br>
+                         <input type="number" name="children" min="0" max="6" placeholder="# of $children"  value="<?php echo $children;?>"><br><br>
                                            <select name="bed">
                                                      <option value="Villa">Villa [$200]</option>
                                                      <option value="King Sweet">King Sweet [$150]</option>
