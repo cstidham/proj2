@@ -58,7 +58,7 @@ if(isset($_POST['search']))
 {
     $data = getPosts();
 
-    $search_Query = "SELECT * FROM `nametable2` WHERE `id` = $data[0]";
+    $search_Query = "SELECT * FROM `nametable2` WHERE `id` = '$data[0]'";
 
     $search_Result = mysqli_query($connect, $search_Query);
 
@@ -116,7 +116,7 @@ if(isset($_POST['insert']))
 if(isset($_POST['delete']))
 {
     $data = getPosts();
-    $delete_Query = "DELETE FROM `nametable2` WHERE `id` = $data[0]";
+    $delete_Query = "DELETE FROM `nametable2` WHERE `id` = '$data[0]'";
     try{
         $delete_Result = mysqli_query($connect, $delete_Query);
 
@@ -138,7 +138,7 @@ if(isset($_POST['delete']))
 if(isset($_POST['update']))
 {
     $data = getPosts();
-    $update_Query = "UPDATE `nametable2` SET `name`=`$data[1]`,`email`=`$data[2]`,`cidate`='$data[3]',`codate`='$data[4]',`guest`='$data[5]',`children`='$data[6]',`bed`='$data[7]',`breakfast`='$data[8]',`message`='$data[9]' WHERE `id` = '$data[0]'";
+    $update_Query = "UPDATE `nametable2` SET `name`='$data[1]',`email`='$data[2]',`cidate`='$data[3]',`codate`='$data[4]',`guest`='$data[5]',`children`='$data[6]',`bed`='$data[7]',`breakfast`='$data[8]',`message`='$data[9]' WHERE `id` = '$data[0]'";
     try{
         $update_Result = mysqli_query($connect, $update_Query);
 
